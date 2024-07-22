@@ -5,12 +5,10 @@ import './fakestore.css'
 const FakeStore = () => {
 
     const [data, setData] = useState([])
-
-    const totalProducts = data.length
-
     const [productsPerPage, setProductsPerPage] = useState(6)
     const [currentPage, setCurrentPage] = useState(1)
 
+    const totalProducts = data.length
     const lastIndex = currentPage * productsPerPage
     const firstIndex = lastIndex - productsPerPage
 
@@ -34,6 +32,7 @@ const FakeStore = () => {
 
     return (
         <div>
+            <h1>FakeStore</h1>
             <div className="container-products">
                 {data.map((product) => (
                     <div className="card-product" key={product.id}>

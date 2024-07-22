@@ -15,7 +15,7 @@ const Videojuegos = () => {
 
     const getData = async () => {
         try {
-        const response = await fetch(`https://api.rawg.io/api/platforms?key=3b3d36f059d14aa99642f5fa40e8aea3`);
+        const response = await fetch(`https://api.rawg.io/api/games?key=3b3d36f059d14aa99642f5fa40e8aea3`);
         const data = await response.json();
         setData(data.results);
         // console.log(data.results)
@@ -31,14 +31,16 @@ const Videojuegos = () => {
 
     return (
         <div>
+            <h1>VideoGames</h1>
             <div className="container-products">
                 {data.slice(firstIndex, lastIndex).map((results) => (
                     <div className="card-product" key={results.id}>
                         <figure className="container-img">
-                            <img src={results.image_background} alt={results.name} />
+                            <img src={results.background_image} alt={results.name} />
                         </figure>
                         <div className="info-product">
                             <h3>{results.name}</h3>
+                            <h3>{}</h3>
                         </div>
                     </div>
                 ))}

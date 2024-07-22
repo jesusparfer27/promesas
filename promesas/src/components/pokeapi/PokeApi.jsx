@@ -34,22 +34,18 @@ const totalProducts = data.length
     return (
         <>
 
-        <h4>Pokemon Encounter</h4>
-
         <div className='Pokemon'>
             <img className="LogoPokemon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/2560px-International_Pok%C3%A9mon_logo.svg.png" alt="" />
             <h2>{data.name}</h2>
             {data.sprites && (
-                <>
+                <div>
 
                     <img className='Pokemon-img' src={data.sprites.front_default} alt="delante" />
                     <img className='Pokemon-img' src={data.sprites.back_default} alt="atrás" />
 
-                </>
+                    </div>
             )}
         </div>
-
-
 
     
                 <Paginacion 
